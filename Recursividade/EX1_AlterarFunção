@@ -1,0 +1,30 @@
+#include<stdio.h>
+
+int Digitos(int N)
+{
+    int cont =1;
+
+    while(N>9)
+    {
+        N = N / 10;
+        cont++;
+    }
+    return cont;
+}
+
+int Digitos2(int M)
+{
+    if(M<9)
+        return 1;
+    else
+    {
+        return Digitos2(M/10)+1;
+    }
+}
+
+int main()
+{
+    printf("Com while: %i\n\n", Digitos(200));
+
+    printf("Com recursividade: %i\n", Digitos2(200));
+}
