@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<string.h>
+
+void InverteNome(char *pnome)
+{
+    char sobrenome[30];
+    int i, j;
+    /*printf("Tamanho de *pnome = %d", strlen(pnome));
+    printf("\nTamanho de sobrenome = %d", strlen(sobrenome));*/
+
+    for(i=strlen(pnome),j=0; i>=0; i--)
+    {
+        if(*(pnome+i) != ' ')
+        {
+            sobrenome[j] = *(pnome+i);
+            //printf("%c", sobrenome[j]);
+            ++j;
+        }
+        else
+            break;
+    }
+    sobrenome[j]='\0';
+
+    printf("Sobrenome ao contrario = %s", sobrenome);
+}
+
+int main()
+{
+    char nome[30];
+    printf("Informe seu nome: ");
+    gets(nome);
+    fflush(stdin);
+
+    InverteNome(nome);
+}
