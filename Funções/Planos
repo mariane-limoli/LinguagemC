@@ -1,0 +1,64 @@
+#include <stdio.h>
+
+void fjovem()
+    {
+        int dependentes, total_pago;
+
+        printf("Quantos dependentes voce tem? ");
+        scanf("%i", &dependentes);
+
+        while (dependentes<0)
+        {
+            printf("\nNumero de dependentes invalido \nPor favor tente novamente.");
+            printf("\nQuantos dependentes voce tem? ");
+            scanf("%i", &dependentes);
+        }
+
+        total_pago = 200+(30+10*dependentes)*12;
+
+        printf("Seu plano é o Plano Jovem");
+        printf("Como voce possui %i dependentes, o total a ser pago é: R$ %i.", dependentes, total_pago);
+    }
+
+void fadulto()
+    {
+        int dependentes, total_pago;
+
+        printf("Quantos dependentes voce tem? ");
+        scanf("%i", &dependentes);
+
+        while (dependentes<0)
+        {
+            printf("\nNumero de dependentes invalido \nPor favor tente novamente.");
+            printf("\nQuantos dependentes voce tem? ");
+            scanf("%i", &dependentes);
+        }
+        if (dependentes>0)
+            total_pago = 300+60*12;
+        else
+            total_pago = 300 + 60*6 + (60-60*0.1)*6;
+        printf("\nSeu plano e o Plano Adulto");
+        printf("\nComo voce possui %i dependentes, o total a ser pago e: R$ %i.", dependentes, total_pago);
+    }
+
+int main()
+    {
+        int idade;
+
+        printf("Bem vindo ao nosso Clube!\n");
+        printf("Qual a sua idade? ");
+
+        scanf("%i", &idade);
+
+
+        if (idade>=16 && idade<20)
+            fjovem();
+
+        if (idade>=20)
+            fadulto();
+
+        if (idade<16)
+            printf("Infelizmente, voce ainda não pode se associar ao nosso clube.");
+    }
+
+
