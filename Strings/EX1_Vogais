@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char palavra[11],vogais[10]={"aeiouAEIOU"};
+    int qntdVogais=0;
+    char caracter;
+
+    printf("Escreva uma palavra: ");
+    scanf("%s", palavra);
+    //printf("%i", strnlen(palavra));
+
+    for(int i=0; i<strlen(palavra);i++)
+        for(int j=0; j<10; j++)
+            if(palavra[i]==vogais[j])
+                qntdVogais++;
+    printf("A palavra %s, possui %i vogais.", palavra, qntdVogais);
+
+    printf("\nEscolha um caracter para substituir as vogais: ");
+    scanf(" %c", &caracter);
+
+    for(int i=0; i<strlen(palavra);i++)
+        for(int j=0; j<10; j++)
+            if(palavra[i]==vogais[j])
+                palavra[i]= caracter;
+
+    printf("%s", palavra);
+}
+
