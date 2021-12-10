@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main()
+{
+    int vetorA[5]={1, 2, 3, 4, 5};
+    int vetorB[5];
+    int i, j=0;
+    printf("O vetor A e': ");
+    for(i=0;i<5;i++)
+        printf("%d - ", vetorA[i]);
+
+
+    for (i=4; i>=0; i--)
+    {
+        vetorB[j]=vetorA[i];
+        j++;
+    }
+
+    printf("\n\nE o vetor B e': ");
+    for(j=0;j<5;j++)
+        printf("%d - ", vetorB[j]);
+}
