@@ -1,0 +1,23 @@
+#include<stdio.h>
+void main(void)
+{
+    int cont,n, c;
+    float S, soma_impar, Total, soma_total;
+
+    soma_impar = 0;
+    for(cont=0;cont<=9;cont=cont+1)
+    {
+        n = 2*cont+1;
+        c=cont+1;
+        soma_impar = soma_impar+n;
+        if(cont%2!=0)
+        {
+            c=c*(-1);
+        }
+        Total = c/soma_impar;
+        soma_total = soma_total + Total;
+    }
+    printf("Soma Total = %.5f\n", soma_total);
+
+    system("pause");
+}
