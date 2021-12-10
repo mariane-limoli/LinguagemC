@@ -1,0 +1,75 @@
+#include<stdio.h>
+#include<string.h>
+
+
+/* Ordenação bolha crescente */
+void bolhaPar (int n, int* v)
+{
+    int i,j;
+    int temp;
+    for (i=n-1; i>=1; i--)
+        for (j=0; j<i; j++)
+        if (v[j]>v[j+1]) { /* troca */
+            temp = v[j];
+            v[j] = v[j+1];
+            v[j+1] = temp;
+}
+}
+/* Ordenação bolha decrescente */
+void bolhaImpar (int n, int* v)
+{
+    int i,j;
+    int temp;
+    for (i=n-1; i>=1; i--)
+        for (j=0; j<i; j++)
+        if (v[j]<v[j+1]) { /* troca */
+            temp = v[j];
+            v[j] = v[j+1];
+            v[j+1] = temp;
+}
+}
+
+int main()
+{
+    int i, j=0, k=0, num, valor;
+
+    printf("Digite um numero de 2 ate 199: ");
+    scanf("%d", &num);
+
+    int vPar[num], vImpar[num];
+
+    for(i=0; i<num; i++)
+    {
+        printf("Digite o valor do numero %d: ", i+1);
+        scanf("%d", &valor);
+
+        if(valor%2 == 0)
+        {
+            vPar[j] = valor;
+            j++;
+        }
+
+        else
+        {
+           vImpar[k] = valor;
+           k++;
+        }
+
+    }
+    bolhaPar(j,vPar);
+    bolhaImpar(k,vImpar);
+
+    printf("Vetor ordenado: \n");
+    for (i=0; i<j; i++)
+    {
+        printf("%d ",vPar[i]);
+        printf("\n");
+    }
+    for (i=0; i<k; i++)
+    {
+        printf("%d ",vImpar[i]);
+        printf("\n");
+    }
+
+}
+
